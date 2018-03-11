@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	{% block head %}
+	<title>{% block title %}{% endblock %} - HOGE WEB</title>
+	{% endblock %}
+</head>
+<body>
+	<h1>HOGE WEB</h1>
+
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul class="flashes">
+		{% for message in messages %}
+			<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+
+	<div id="content">
+		{% block content %}{% endblock %}
+	</div>
+
+	<footer>
+		{% block footer %}
+			&copy; HOGE WEB
+		{% endblock %}
+	</footer>
+
+</body>
+</html>
