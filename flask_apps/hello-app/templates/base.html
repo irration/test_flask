@@ -9,6 +9,10 @@
 <body>
 	<h1>HOGE WEB</h1>
 
+	<p>
+		<img src="{{ url_for('static', filename='image.jpg') }}" alt="Thumbnail">
+	</p>
+
 	{% with messages = get_flashed_messages() %}
 	{% if messages %}
 	<ul class="flashes">
